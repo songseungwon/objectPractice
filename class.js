@@ -1,12 +1,19 @@
 class Person{
-    constructor(){ // constructor는 객체를 생성할 때 이 함수를 자동으로 호출
+    constructor(name, first, second){ // constructor는 객체를 생성할 때 이 함수를 자동으로 호출
+        this.name = name;
+        this.first = first;
+        this.second = second;
         console.log('constructor');
     } 
+    sum(){
+        return this.first+this.second;
+    }
 }
-var kim = new Person(); // 생성과 동시에 contructor 실행
+var kim = new Person('kim', 10, 20); // 생성과 동시에 contructor 실행
 //console.log(Person()); Class constructor Person cannot be invoked without 'new'...new를 사용하지 않고 Person 생성자(함수)를 호출할 수 없음.
 console.log(Person); //[Function: Person]  ...class로 선언한 Person은 내부적으로 함수.
-console.log(kim); // Person {} ...Person 생성자(constructor)
+console.log(kim); //Person { name: 'kim', first: 10, second: 20 } 
+console.log(kim.sum());
 
 //let kim = new Person('kim', 10, 20);
 //let lee = new Person('lee', 50, 20);

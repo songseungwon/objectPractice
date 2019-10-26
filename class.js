@@ -7,7 +7,7 @@ class Person{
     } 
     sum(){
         return this.first+this.second;
-    }
+    }  // constructor 생성 이후 constructor의 prototype에 따로 저장되는 함수-같은 클래스에 속한 모든 객체(같은공장에서만들어진)가 공유하는 함수)
 }
 var kim = new Person('kim', 10, 20); // 생성과 동시에 contructor 실행
 //console.log(Person()); Class constructor Person cannot be invoked without 'new'...new를 사용하지 않고 Person 생성자(함수)를 호출할 수 없음.

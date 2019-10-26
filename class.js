@@ -9,6 +9,30 @@ class Person{
         return this.first+this.second;
     }  // constructor 생성 이후 constructor의 prototype에 따로 저장되는 함수-같은 클래스에 속한 모든 객체(같은공장에서만들어진)가 공유하는 함수)
 }
+
+class PersonPlus extends Person{
+/*    constructor(name, first, second){
+        this.name = name;
+        this.first = first;
+        this.second = second;
+        console.log('constructor');
+    } 
+    sum(){
+        return this.first+this.second;
+    }
+.......extends Person을 통해 Person 상속에 따라 생략가능
+*/ 
+    constructor(name, first, second, third){
+        super(name, first, second);
+        this.third = third;
+    }
+    sum(){
+        return super.sum() + this.third;
+    }
+    avg(){
+        return (this.first+this.second)/2;
+    }
+}
 var kim = new Person('kim', 10, 20); // 생성과 동시에 contructor 실행
 //console.log(Person()); Class constructor Person cannot be invoked without 'new'...new를 사용하지 않고 Person 생성자(함수)를 호출할 수 없음.
 console.log(Person); //[Function: Person]  ...class로 선언한 Person은 내부적으로 함수.
